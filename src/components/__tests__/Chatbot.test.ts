@@ -24,8 +24,9 @@ interface EmotionAnalysis {
 
 // ==================== 情绪识别函数 ====================
 
-function analyzeEmotion(text: string): EmotionAnalysis {
-  const textLower = text.toLowerCase()
+// 生成共情回复（增强版）
+function generateEmpatheticResponse(_text: string, analysis: EmotionAnalysis): string {
+  const { primary, intensity, sources } = analysis
   
   // 危险信号检测
   const dangerKeywords = ['想死', '不想活', '活着没意思', '自残', '自杀', '轻生', '结束生命', '活不下去了']
